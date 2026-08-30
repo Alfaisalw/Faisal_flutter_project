@@ -14,12 +14,20 @@ A beautifully designed, responsive Flutter application showcasing the top touris
 
 
 <p align="center">
-<img width="400" height="930" alt="Screenshot 2026-08-30 155617" src="https://github.com/user-attachments/assets/00b18122-6184-45d8-886b-ee9203177424" />
-<img width="400" height="953" alt="Screenshot 2026-08-30 155657" src="https://github.com/user-attachments/assets/b49f62a7-7150-408f-92bd-68a06a192b8a" />
 
-<img width="400" height="908" alt="Screenshot 2026-08-30 155505" src="https://github.com/user-attachments/assets/1103263a-1549-45ea-bb29-97a0fd7bc07b" />
-<img width="400" height="872" alt="Screenshot 2026-08-30 155530" src="https://github.com/user-attachments/assets/db095cc1-b16b-4a03-a071-a84f3694bb5f" />
-<img width="400" height="907" alt="Screenshot 2026-08-30 155543" src="https://github.com/user-attachments/assets/0792c62f-837a-4907-ad60-584e38595adb" />
+
+
+
+
+<img src="https://github.com/user-attachments/assets/00b18122-6184-45d8-886b-ee9203177424" width="180">
+  &nbsp;&nbsp;
+  <img src="https://github.com/user-attachments/assets/b49f62a7-7150-408f-92bd-68a06a192b8a" width="180">
+  &nbsp;&nbsp;
+  <img src="https://github.com/user-attachments/assets/1103263a-1549-45ea-bb29-97a0fd7bc07b" width="180">
+  &nbsp;&nbsp;
+  <img src="https://github.com/user-attachments/assets/db095cc1-b16b-4a03-a071-a84f3694bb5f" width="180">
+  &nbsp;&nbsp;
+  <img src="https://github.com/user-attachments/assets/0792c62f-837a-4907-ad60-584e38595adb" width="180">
 </p>
 
 ## 🚀 Getting Started
