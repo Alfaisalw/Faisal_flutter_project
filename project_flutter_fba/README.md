@@ -8,6 +8,7 @@ A beautifully designed, responsive Flutter application showcasing the top touris
 * **Smooth Scrolling Experience:** Implemented seamless vertical and horizontal scrolling across the app to provide a comfortable browsing experience without any overflow issues.
 * **Modern UI/UX Design:** Features a clean, dark-themed interface with custom cards, hero images, and well-structured details pages.
 * **Responsive Layouts:** Built with a carefully structured widget tree using `ListView`,  and `Expanded` to ensure the UI adapts perfectly to different screen sizes.
+* Press on see more to learn about the palce
 
 ## 📸 Screenshots
 
