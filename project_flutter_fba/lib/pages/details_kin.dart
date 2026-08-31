@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:project_flutter_fba/modles/riyadh_model.dart';
 
 class DetailsKin extends StatelessWidget {
-  const DetailsKin({super.key});
+final RiyadhModel model ;
+
+
+
+  const DetailsKin({super.key, required this.model});
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +16,7 @@ class DetailsKin extends StatelessWidget {
       backgroundColor: Colors.black,
       appBar: AppBar(
         centerTitle: true,
-        title: Text("Kigdom TOWER"),
+        title: Text(model.name!),
         backgroundColor: const Color.fromARGB(255, 103, 11, 149),
         
       ),body:ListView(
@@ -21,14 +26,14 @@ class DetailsKin extends StatelessWidget {
               height: 300,
             child: 
               
-                    ClipRRect(borderRadius: BorderRadius.circular(30),child: Image.asset("assets/images/photo_2026-08-30_13-17-46.jpg",height: 300,fit: BoxFit.fill,width: double.infinity))
+                    ClipRRect(borderRadius: BorderRadius.circular(30),child: Image.asset(model.imageDet!,height: 300,fit: BoxFit.fill,width: double.infinity,cacheWidth: 800,))
 
           )
           ,SizedBox(
-            height: 300
-            ,child: Column(
+            
+            child: Column(
               children: [
-                Text("Kingdom Centre is an iconic architectural landmark in Riyadh, offering a luxurious tourist experience complete with high-end shopping, fine dining, and a premier hotel Its standout attraction is the spectacular Sky Bridge, which provides visitors with breathtaking, panoramic views of the city skyline",
+                Text(model.description!,
                 style: TextStyle(color: const Color.fromARGB(255, 255, 255, 254),fontWeight:FontWeight.bold ,height: 2,fontSize: 16),)
                 ,SizedBox(height: 15,)
               ,Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,children: [
@@ -54,7 +59,7 @@ class DetailsKin extends StatelessWidget {
 
         
        
-                  ,Text("Most Popular",style: TextStyle(fontSize: 40,color: const Color.fromARGB(255, 240, 240, 237)),) 
+                  ,Text("Most Popular",style: TextStyle(fontSize: 40,color: const Color.from(alpha: 1, red: 0.941, green: 0.941, blue: 0.929)),) 
                         ,SizedBox(height: 20,)
                         ,SizedBox(
                             height: 350,

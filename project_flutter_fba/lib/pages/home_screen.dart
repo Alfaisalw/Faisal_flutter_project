@@ -1,12 +1,36 @@
 //import 'dart:ffi';
 
-import 'package:flutter/material.dart';
-import 'package:project_flutter_fba/pages/details_kin.dart';
+import 'package:flutter/material.dart';///true
+import 'package:project_flutter_fba/data/riyadh_data.dart';
+import 'package:project_flutter_fba/modles/riyadh_model.dart';
+import 'package:project_flutter_fba/pages/details_kin.dart';//true
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
   @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  @override
+  void initState(){
+    super.initState();
+  getData();
+  }
+ 
+ 
+ List<RiyadhModel> riyadhList =[];
+ void getData(){
+  for (var item in places){
+    RiyadhModel riyadhModel = RiyadhModel.fromJson(item);
+    riyadhList.add(riyadhModel);
+
+  }
+ }
+ 
+ 
+ 
   Widget build(BuildContext context) {
       double width = MediaQuery.sizeOf(context).width;
       double height = MediaQuery.sizeOf(context).height;
@@ -15,24 +39,24 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: const Color.fromARGB(255, 0, 0, 0),
         appBar: AppBar(backgroundColor: Color.fromARGB(255, 16, 16, 17),centerTitle: true,title: Text("Riyadh" ,style: TextStyle(color: const Color.fromARGB(236, 247, 244, 244),fontSize: 50,fontWeight: FontWeight(30) ),),),
 
-        body:Expanded(//edit before Countainer  
-          
-          child: ListView(
-            padding: EdgeInsets.all(12),
-            children: [
-              Container( ///First countainer (Vists Riyadh)
-                height: height*0.1,
-                decoration: BoxDecoration(color: const Color.fromARGB(255, 53, 6, 146),borderRadius: BorderRadius.circular(25)),
-                child: Center(child: Text("Visit and Explore ",style: TextStyle(fontSize: 35,color: const Color.fromARGB(255, 241, 240, 238),fontWeight: FontWeight(200)),),) ,
-              ),
-              Container(/// Catagory 1
+        body://edit before Countainer  
+             ListView.builder(
+                 padding: EdgeInsets.all(12),
+            itemCount:riyadhList.length ,
+            itemBuilder: (context, index) {
+             var place =riyadhList[index];
+             
+            
+         
+
+             return Container(/// Catagory 1
                  // padding: EdgeInsets.all(16),////هنا البلا
                // height: height *0.7,
                 color: const Color.fromARGB(255, 10, 1, 17),
                 child: Column( crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                  
-                  Text("Towers",style: TextStyle(fontSize: 40,color: const Color.fromARGB(255, 240, 240, 237)),) 
+               ///start   
+                  Text(place.catagory !,style: TextStyle(fontSize: 40,color: const Color.fromARGB(255, 240, 240, 237)),) 
                         ,SizedBox(height: 20,)
                         ,SizedBox(
                             height: 350,
@@ -44,10 +68,10 @@ class HomeScreen extends StatelessWidget {
                               decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),),
                               
                               child: Column(crossAxisAlignment: CrossAxisAlignment.start,children: [
-                                    Expanded(child:ClipRRect(borderRadius: BorderRadius.circular(30),child: Image.asset("assets/images/image.png",height: 300,fit: BoxFit.fill,width: double.infinity,),))
-                                    ,Text("Kingdom Tower",style: TextStyle(fontSize: 30,color: const Color.fromARGB(255, 243, 241, 235),fontWeight: FontWeight(450),),)
+                                    Expanded(child:ClipRRect(borderRadius: BorderRadius.circular(30),child: Image.asset(place.image!,height: 300,fit: BoxFit.fill,width: double.infinity,),))
+                                    ,Text(place.name!,style: TextStyle(fontSize: 30,color: const Color.fromARGB(255, 243, 241, 235),fontWeight: FontWeight(450),),)
                                       ,ElevatedButton(style: ElevatedButton.styleFrom(backgroundColor: const Color.fromARGB(255, 89, 14, 227),shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))),onPressed: (){
-                                        Navigator.push(context, MaterialPageRoute(builder: (context) => DetailsKin(),));
+                                        Navigator.push(context, MaterialPageRoute(builder: (context) => DetailsKin(model: place,),));
                                       },
                                        child: Text("See more",style: TextStyle(color: const Color.fromARGB(255, 240, 240, 239),fontWeight: FontWeight.bold,fontSize: 25),))
 
@@ -60,8 +84,8 @@ class HomeScreen extends StatelessWidget {
                               decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),),
                               
                               child: Column(crossAxisAlignment: CrossAxisAlignment.start,children: [
-                                   Expanded(child: ClipRRect(borderRadius: BorderRadius.circular(30),child: Image.asset("assets/images/image2.png",height: 300,width: double.infinity,fit: BoxFit.fill),))
-                                    ,Text("KAFD Tower",style: TextStyle(fontSize: 30,color: const Color.fromARGB(255, 243, 241, 235),fontWeight: FontWeight(450),),)
+                                   Expanded(child: ClipRRect(borderRadius: BorderRadius.circular(30),child: Image.asset(place.imageSec!,height: 300,width: double.infinity,fit: BoxFit.fill),))
+                                    ,Text(place.nameSec!,style: TextStyle(fontSize: 30,color: const Color.fromARGB(255, 243, 241, 235),fontWeight: FontWeight(450),),)
                                       ,ElevatedButton(style: ElevatedButton.styleFrom(backgroundColor: const Color.fromARGB(255, 89, 14, 227),shape: RoundedRectangleBorder(borderRadius: BorderRadiusGeometry.circular(12))),onPressed: (){},
                                        child: Text("See more",style: TextStyle(color: const Color.fromARGB(255, 240, 240, 239),fontWeight: FontWeight.bold,fontSize: 25),))
 
@@ -76,56 +100,17 @@ class HomeScreen extends StatelessWidget {
                              
                 
                 
-                  ,Text("Diryah",style: TextStyle(fontSize: 40,color: const Color.fromARGB(255, 240, 240, 237)),) 
-                        ,SizedBox(height: 20,)
-                        ,SizedBox(
-                            height: 350,
-                          child: 
-                          ListView(scrollDirection: Axis.horizontal, children: [
-                            
-                            Container( ///Kingdom tower
-                              width: width*0.7,
-                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),),
-                              
-                              child: Column(crossAxisAlignment: CrossAxisAlignment.start,children: [
-                                    Expanded(child:ClipRRect(borderRadius: BorderRadius.circular(30),child: Image.asset("assets/images/imagebuj.png",height: 300,fit: BoxFit.fill,width: double.infinity,),))
-                                    ,Text("Al bujari",style: TextStyle(fontSize: 30,color: const Color.fromARGB(255, 243, 241, 235),fontWeight: FontWeight(450),),)
-                                      ,ElevatedButton(style: ElevatedButton.styleFrom(backgroundColor: const Color.fromARGB(255, 89, 14, 227),shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))),onPressed: (){
-                                        Navigator.push(context, MaterialPageRoute(builder: (context) => DetailsKin(),));
-                                      },
-                                       child: Text("See more",style: TextStyle(color: const Color.fromARGB(255, 240, 240, 239),fontWeight: FontWeight.bold,fontSize: 25),))
-
-                              ],),
-                             
-                          
-                            ),SizedBox(width: 20,),
-                            Container( ///Second Tower
-                              width: width*0.8,
-                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),),
-                              
-                              child: Column(crossAxisAlignment: CrossAxisAlignment.start,children: [
-                                   Expanded(child: ClipRRect(borderRadius: BorderRadius.circular(30),child: Image.asset("assets/images/imagetur.png",height: 300,width: double.infinity,fit: BoxFit.fill),))
-                                    ,Text("Traif district",style: TextStyle(fontSize: 30,color: const Color.fromARGB(255, 243, 241, 235),fontWeight: FontWeight(450),),)
-                                      ,ElevatedButton(style: ElevatedButton.styleFrom(backgroundColor: const Color.fromARGB(255, 89, 14, 227),shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))),onPressed: (){},
-                                       child: Text("See more",style: TextStyle(color: const Color.fromARGB(255, 240, 240, 239),fontWeight: FontWeight.bold,fontSize: 25),))
-
-                              ],),
-                             
-                          
-                            )
-                            
-                          ], ) ),
+          
                         ],),  
                 
-              )
-            ],
+              );
+             }
           ),
-        )
+        
 
         
 
 
     );
-  }///main
-}///main
+  }}///main
 
