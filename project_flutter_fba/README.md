@@ -31,12 +31,53 @@ A beautifully designed, responsive Flutter application showcasing the top touris
   <img src="https://github.com/user-attachments/assets/0792c62f-837a-4907-ad60-584e38595adb" width="180">
 </p>
 
-## 🚀 Getting Started
+---------------------------------------------------------------------------------------------------------------------------
+## Updates 
+Add 2 catagoires : Mall , Mueseem 
+-Connected it with database using supabase : to improve inserting and deleting 
+-------------------------------------------------------------------------------------------------------------------------------
+## Screenshots of Updates
 
-To run this project locally, follow these steps:
+<img width="600"  alt="Screenshot 2026-09-08 221101" src="https://github.com/user-attachments/assets/5a575997-a7e6-4c0f-9b8a-3a0f0b74d871" />
 
-1. Clone this repository:
-   ```bash
-   git clone [https://github.com/YourUsername/YourRepoName.git](https://github.com/YourUsername/YourRepoName.git)
+<img width="582"  alt="Screenshot 2026-09-08 221112" src="https://github.com/user-attachments/assets/25516050-4a2e-435f-a2a1-3c17e1d8153e" />
+
+<img width="588"  alt="Screenshot 2026-09-08 221123" src="https://github.com/user-attachments/assets/efc22245-637e-48da-bfaf-14c69b2df522" />
+
+<img width="608"  alt="Screenshot 2026-09-08 221137" src="https://github.com/user-attachments/assets/a97fcacb-c3fd-4487-abf5-411cbb19a671" />
+
+<img width="625"  alt="Screenshot 2026-09-08 221149" src="https://github.com/user-attachments/assets/72e78ee3-645d-49b6-86b9-13b331e52820" />
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------
+## DataBase
+
+<img width="1351"  alt="image" src="https://github.com/user-attachments/assets/91b01118-1f1c-4d6a-8be1-295ab2322918" />
+
+<img width="975"  alt="image" src="https://github.com/user-attachments/assets/c67d38de-8d54-4d0f-bcd2-98093574cf4c" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 🚀 Made By Faisal 
+
+
+
+
+
+
+
 
 
