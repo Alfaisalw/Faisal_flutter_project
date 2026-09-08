@@ -14,13 +14,14 @@ this.nameSec,this.imageSec});
 
 factory RiyadhModel.fromJson(Map<String,dynamic> json){
   return RiyadhModel(
-    catagory: json["catagory"]//1
-    ,name: json["name"]//2
-    ,image: json["image"]//3
-    ,imageDet: json["imageDet"]//4 
-    ,description: json["description"]///5
-    ,nameSec: json["nameSec"]//6
-    ,imageSec: json["imageSec"]//7
+    catagory: json["category"] ?? "Unknown"
+
+    ,name: json["name"] ?? "Unknown"
+    ,image: json["image"] ?? "Unknown"
+    ,imageDet: json["image_det"] ?? "Unknown"
+    ,description: json["description"] ?? "Unknown"
+    ,nameSec: json["name_sec"] ?? "Unknown"
+    ,imageSec: json["image_sec"] ?? "Unknown"
 
 
 
